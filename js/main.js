@@ -11,7 +11,9 @@ btnLogin.addEventListener("click", (e) => {
     alert("vui lòng không để trống");
   } else {
     const user = JSON.parse(localStorage.getItem(inputUsername.value));
-    if (
+    if (user === null) {
+      alert("Người dùng không tồn tại");
+    } else if (
       user.password === inputPassword.value
     ) {
       alert("Đăng Nhập Thành Công");
